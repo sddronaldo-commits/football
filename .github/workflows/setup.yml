@@ -1,0 +1,124 @@
+name: Set up live data
+
+# Run this once, from the Actions tab, to switch the project off demo data.
+# Everything happens on GitHub — no local checkout, no terminal.
+#
+# Before running:
+#   1. Add FOOTBALL_DATA_TOKEN as a repository secret
+#   2. Upload your Transfermarkt CSV somewhere in the repo (drag and drop into
+#      the GitHub web UI works) and put its path in `csv_path` below
+#
+# Afterwards, delete the CSV from the repo — only the four fields the join needs
+# are kept, in data/market_values.json.
+
+on:
+  workflow_dispatch:
+    inputs:
+      csv_path:
+        description: Path to the Transfermarkt CSV you uploaded
+        required: true
+        default: players.csv
+      season:
+        description: Season these valuations belong to
+        required: true
+        default: "2025"
+      league_column:
+        description: Column holding the competition id
+        required: true
+        default: current_club_domestic_competition_id
+      reset_ledger:
+        description: Clear the seeded demo predictions (do this on the first live run)
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PIPELINE_TOKEN || github.token }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r pipeline/requirements.txt
+
+      - name: Check the token is present
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: |
+          if [ -z "$FOOTBALL_DATA_TOKEN" ]; then
+            echo "::error::FOOTBALL_DATA_TOKEN is not set. Add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "X-Auth-Token: $FOOTBALL_DATA_TOKEN" \
+            "https://api.football-data.org/v4/competitions/PL")
+          echo "football-data.org replied $code"
+          [ "$code" = "200" ] || { echo "::error::Token rejected ($code)."; exit 1; }
+
+      - name: Convert market values
+        run: |
+          python tools/import_market_values.py "${{ inputs.csv_path }}" \
+            --season "${{ inputs.season }}" \
+            --league-col "${{ inputs.league_column }}"
+
+      - name: Clear the demo ledger
+        if: ${{ inputs.reset_ledger }}
+        run: |
+          # Seeded demo predictions are marked mode:demo, but leaving them in
+          # would mix simulated picks into the published record.
+          rm -f data/ledger/*.jsonl
+          echo "ledger cleared — the real record starts from the next predict run"
+
+      - name: First live run
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: python -m pipeline.run
+
+      - name: Save the source join report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: join-report
+          path: data/join_report.json
+          if-no-files-found: warn
+
+      - name: Report the join rate
+        run: |
+          python - <<'PY' >> $GITHUB_STEP_SUMMARY
+          import json, pathlib
+          report = json.loads(pathlib.Path("data/join_report.json").read_text())
+          print(f"## Market value join\n")
+          print(f"**{report['match_rate']:.1%}** matched ({report['matched']} of {report['total']}).\n")
+          if report["unmatched_sample"]:
+              print("Names that did not match — add these to `config/overrides.csv`:\n")
+              print("```")
+              for name in report["unmatched_sample"]:
+                  print(name)
+              print("```")
+          PY
+
+      - name: Commit live data
+        run: |
+          git config user.name "bigfive-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data web/data
+          git diff --staged --quiet || {
+            git commit -m "switch to live data"
+            git push
+          }
+
+  publish:
+    needs: setup
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

@@ -1,0 +1,49 @@
+name: Score
+
+# Tuesday: the weekend is finished, so score what was predicted on Friday.
+# Scoring is a separate workflow, and a separate commit, from predicting.
+on:
+  schedule:
+    - cron: "0 7 * * 2"
+  workflow_dispatch:
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PIPELINE_TOKEN || github.token }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r pipeline/requirements.txt
+      - name: Score finished matches
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: python -m pipeline.run
+      - name: Commit results
+        run: |
+          git config user.name "bigfive-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data web/data
+          git diff --staged --quiet || {
+            git commit -m "score: results through $(date -u +%Y-%m-%d)"
+            git push
+          }
+
+  publish:
+    needs: score
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

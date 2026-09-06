@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big Five Lab — a football model that shows its record</title>
+<meta name="description" content="Match, value and style models across the five biggest European leagues, with every prediction recorded before kickoff and scored afterwards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#record">Skip to the record</a>
+
+<header class="topbar">
+  <div class="wordmark">Big Five Lab</div>
+  <div class="topbar-right">
+    <span id="mode-badge" class="badge" hidden></span>
+    <span id="freshness" class="freshness"></span>
+    <a class="ghost-link" href="https://github.com/" id="repo-link">Source</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="record">
+    <h1 id="hero-line">Every prediction, in the open.</h1>
+    <p class="lede">
+      One model picks the outcome of every match in England, Spain, Italy, Germany and France.
+      Picks are committed to the repository before kickoff and scored after the whistle,
+      so the record below is checkable rather than claimed.
+    </p>
+
+    <div class="wall-head">
+      <div class="wall-legend">
+        <span class="key hit"></span> right
+        <span class="key miss"></span> wrong
+      </div>
+      <div class="chips" id="league-chips" role="group" aria-label="Filter by league"></div>
+    </div>
+    <div class="wall" id="wall" role="img" aria-label="Grid of every scored prediction"></div>
+    <p class="wall-note" id="wall-note"></p>
+
+    <dl class="scoreboard" id="scoreboard"></dl>
+    <div class="rolling" id="rolling"></div>
+  </section>
+
+  <section class="band" id="weekend">
+    <div class="section-head">
+      <h2>The next round</h2>
+      <p>Recorded <span id="fixture-count">—</span> fixtures. Bars show the model's probability for a home win, draw and away win.</p>
+    </div>
+    <div class="fixtures" id="fixtures"></div>
+  </section>
+
+  <section class="band" id="weakness">
+    <div class="section-head">
+      <h2>Where it fails</h2>
+      <p>Overall accuracy hides the shape of the errors, so here is the shape.</p>
+    </div>
+    <div class="split">
+      <div class="panel">
+        <h3>Draws are the hole</h3>
+        <div id="per-class"></div>
+        <p class="fine" id="draw-note"></p>
+      </div>
+      <div class="panel">
+        <h3>Is a stated 60% really 60%?</h3>
+        <div id="calibration"></div>
+        <p class="fine">Points on the diagonal mean the stated confidence matches how often those picks land.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="premium">
+    <div class="section-head">
+      <h2>The same player is worth more in England</h2>
+      <p>Fitting one value model across all five leagues puts a number on what the market pays for identical output. Ligue 1 is the baseline.</p>
+    </div>
+    <div class="split">
+      <div class="panel"><div id="premium-chart"></div></div>
+      <div class="panel">
+        <h3>What the market pays over the model</h3>
+        <div class="toggle" id="value-toggle" role="group" aria-label="Sort direction"></div>
+        <ol class="value-list" id="value-list"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="whatif">
+    <div class="section-head">
+      <h2>Price a player yourself</h2>
+      <p>The value model's coefficients ship with the page, so this runs in your browser with nothing sent anywhere.</p>
+    </div>
+    <div class="whatif" id="whatif-controls"></div>
+    <output class="whatif-out" id="whatif-out"></output>
+  </section>
+
+  <section class="band" id="styles">
+    <div class="section-head">
+      <h2>Style map</h2>
+      <p>Every player placed by playing style, then matched to the closest profiles anywhere in the big five.</p>
+    </div>
+    <div class="scout">
+      <div class="panel scatter-panel">
+        <div class="scout-controls">
+          <label class="visually-hidden" for="player-search">Search for a player</label>
+          <input id="player-search" type="search" placeholder="Search a player" autocomplete="off">
+          <select id="league-select" aria-label="League"></select>
+        </div>
+        <div id="scatter"></div>
+        <p class="fine">Two dimensions compressed from eight per-90 measures, z-scored inside each league so the leagues are comparable.</p>
+      </div>
+      <div class="panel" id="player-panel">
+        <p class="empty">Pick a point, or search a name, to see the closest profiles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="method">
+    <div class="section-head"><h2>How it runs, and what it can't do</h2></div>
+    <div class="method">
+      <div>
+        <h3>The loop</h3>
+        <p>A scheduled job fetches results, rebuilds two feature tables, retrains, predicts the coming round and commits. A second job scores the previous round. Nothing runs when you load this page — every number here was computed in CI and shipped as a static file.</p>
+      </div>
+      <div>
+        <h3>Honest limits</h3>
+        <ul>
+          <li>Market values are crowd estimates, not transfer fees. The model mostly learns that young players with minutes at big clubs cost more.</li>
+          <li>The style map has no ground truth. It is a visualisation, not a model with a score.</li>
+          <li>Draw prediction is close to unusable, which is the normal result and is shown above rather than hidden.</li>
+          <li>This is not a betting tool and carries no odds comparison.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Sources</h3>
+        <p>Match results and fixtures from football-data.org, whose free tier covers the big five at ten requests a minute. Player statistics from Understat. Market values from a committed Transfermarkt-derived snapshot, refreshed monthly.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span id="footer-meta"></span>
+</footer>
+
+<div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+<script src="app.js" defer></script>
+</body>
+</html>

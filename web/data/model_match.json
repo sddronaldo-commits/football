@@ -1,0 +1,89 @@
+{
+ "accuracy": 0.5333,
+ "baseline_form": 0.5257,
+ "baseline_home": 0.4656,
+ "brier": 0.5967,
+ "calibration": [
+  {
+   "bin": 0.335,
+   "n": 20,
+   "observed": 0.35,
+   "stated": 0.3553
+  },
+  {
+   "bin": 0.405,
+   "n": 197,
+   "observed": 0.4416,
+   "stated": 0.404
+  },
+  {
+   "bin": 0.475,
+   "n": 215,
+   "observed": 0.4744,
+   "stated": 0.473
+  },
+  {
+   "bin": 0.545,
+   "n": 133,
+   "observed": 0.5789,
+   "stated": 0.5448
+  },
+  {
+   "bin": 0.615,
+   "n": 135,
+   "observed": 0.5037,
+   "stated": 0.6133
+  },
+  {
+   "bin": 0.685,
+   "n": 70,
+   "observed": 0.6,
+   "stated": 0.6823
+  },
+  {
+   "bin": 0.755,
+   "n": 56,
+   "observed": 0.6964,
+   "stated": 0.7551
+  },
+  {
+   "bin": 0.825,
+   "n": 46,
+   "observed": 0.6304,
+   "stated": 0.8177
+  },
+  {
+   "bin": 0.895,
+   "n": 25,
+   "observed": 0.88,
+   "stated": 0.8838
+  },
+  {
+   "bin": 0.965,
+   "n": 18,
+   "observed": 0.8333,
+   "stated": 0.9572
+  }
+ ],
+ "log_loss": 1.0092,
+ "model_version": "v2de6c4b",
+ "per_class": {
+  "A": {
+   "precision": 0.5148,
+   "recall": 0.5182,
+   "support": 303
+  },
+  "D": {
+   "precision": 0.1053,
+   "recall": 0.0215,
+   "support": 186
+  },
+  "H": {
+   "precision": 0.5717,
+   "recall": 0.7676,
+   "support": 426
+  }
+ },
+ "test_matches": 915,
+ "train_matches": 5112
+}

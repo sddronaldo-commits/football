@@ -1,0 +1,2839 @@
+{
+ "accuracy": 0.5333,
+ "accuracy_last_50": 0.66,
+ "brier": 0.5967,
+ "by_league": {
+  "BUNDESLIGA": {
+   "accuracy": 0.5597,
+   "brier": 0.5939,
+   "n": 159
+  },
+  "EPL": {
+   "accuracy": 0.5427,
+   "brier": 0.6048,
+   "n": 199
+  },
+  "LALIGA": {
+   "accuracy": 0.4724,
+   "brier": 0.6301,
+   "n": 199
+  },
+  "LIGUE1": {
+   "accuracy": 0.5535,
+   "brier": 0.5764,
+   "n": 159
+  },
+  "SERIEA": {
+   "accuracy": 0.5477,
+   "brier": 0.5738,
+   "n": 199
+  }
+ },
+ "cells": [
+  {
+   "actual": "A",
+   "confidence": 0.799,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "RB Leipzig 1-2 Hoffenheim",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.47,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Werder Bremen 3-2 Borussia Monchengladbach",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.583,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Bournemouth 1-1 Crystal Palace",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.413,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Newcastle United 1-1 Manchester United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.59,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Athletic Club 1-2 Girona",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.382,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Valencia 3-1 Mallorca",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.555,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Brentford 1-0 Chelsea",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.461,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Brest 2-2 Angers",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.717,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Nice 3-0 Nantes",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.484,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Stuttgart 2-0 Freiburg",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.409,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Wolfsburg 1-0 Borussia Dortmund",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.626,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Parma 2-1 AC Milan",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.345,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Udinese 1-2 Juventus",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.597,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Venezia 0-4 Inter",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.459,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "St. Pauli 4-2 Heidenheim",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.355,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Atletico Madrid 0-0 Getafe",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.4,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Valladolid 2-2 Leganes",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.7,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Napoli 0-0 Monza",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.548,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Roma 0-1 Lecce",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.669,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Nottingham Forest 1-3 Manchester City",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.393,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Wolverhampton Wanderers 2-0 Fulham",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.931,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Barcelona 4-0 Espanyol",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.646,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Villarreal 2-1 Las Palmas",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.439,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Paris Saint-Germain 0-0 Montpellier",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.376,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Reims 2-0 Monaco",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.655,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Saint-Etienne 0-4 Lyon",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.662,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Union Berlin 2-1 Eintracht Frankfurt",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.532,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Celta Vigo 2-1 Alaves",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.394,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Rennes 2-5 Marseille",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.83,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Strasbourg 3-0 Lille",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.457,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Toulouse 4-3 Lens",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.584,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Como 2-0 Fiorentina",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.417,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Empoli 2-2 Atalanta",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.822,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Torino 2-1 Lazio",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.605,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Aston Villa 2-1 Everton",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.458,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Brighton 2-1 Arsenal",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.406,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Tottenham Hotspur 2-1 Leicester City",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.467,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "West Ham United 3-1 Ipswich Town",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.454,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Real Madrid 0-1 Real Betis",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.665,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Bologna 1-3 Hellas Verona",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.949,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Mainz 05 3-0 Holstein Kiel",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.893,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Southampton 0-9 Liverpool",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.793,
+   "correct": false,
+   "date": "2025-11-25",
+   "label": "Real Sociedad 1-1 Rayo Vallecano",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.384,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Sevilla 1-0 Osasuna",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.38,
+   "correct": true,
+   "date": "2025-11-25",
+   "label": "Auxerre 2-0 Le Havre",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.769,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Heidenheim 0-3 Mainz 05",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.531,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Hoffenheim 2-1 Holstein Kiel",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.777,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Manchester City 1-0 Manchester United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.441,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Mallorca 0-2 Real Sociedad",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.601,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Hellas Verona 0-2 Udinese",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.58,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Inter 2-1 Torino",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.425,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Lecce 2-1 Napoli",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.438,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Augsburg 0-3 Bayer Leverkusen",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.614,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Bochum 1-2 Werder Bremen",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.369,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Eintracht Frankfurt 0-3 St. Pauli",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.493,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Everton 1-1 West Ham United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.519,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Leicester City 2-0 Nottingham Forest",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.446,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Las Palmas 1-1 Valencia",
+   "league": "LALIGA",
+   "pick": "D"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.533,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Brest 1-1 Toulouse",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.78,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Empoli 3-1 Cagliari",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.421,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Borussia Monchengladbach 0-2 Stuttgart",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.464,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Le Havre 2-1 Strasbourg",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.448,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Lens 1-0 Saint-Etienne",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.48,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Atalanta 2-0 Como",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.399,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Arsenal 0-2 Brentford",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.382,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Crystal Palace 1-0 Wolverhampton Wanderers",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.374,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Getafe 0-3 Villarreal",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.585,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Girona 0-2 Valladolid",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.679,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "AC Milan 3-0 Monza",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.577,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Borussia Dortmund 2-1 Union Berlin",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.491,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Freiburg 1-2 RB Leipzig",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.41,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Espanyol 1-1 Athletic Club",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.535,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Leganes 2-2 Sevilla",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.767,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Lyon 2-2 Reims",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.639,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Chelsea 0-2 Aston Villa",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.466,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Angers 2-3 Auxerre",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.381,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Monaco 1-1 Nice",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.388,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Montpellier 1-2 Nantes",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.37,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Fulham 4-2 Tottenham Hotspur",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.403,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Celta Vigo 3-2 Atletico Madrid",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.394,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Osasuna 3-0 Real Madrid",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.445,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Genoa 2-3 Venezia",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.567,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Juventus 1-4 Roma",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.435,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Lazio 2-1 Parma",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.504,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Bayern Munich 0-1 Wolfsburg",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.678,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Alaves 0-2 Barcelona",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.407,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Rayo Vallecano 0-4 Real Betis",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.598,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Marseille 2-0 Paris Saint-Germain",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.472,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Brighton 0-2 Bournemouth",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.558,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Ipswich Town 3-1 Southampton",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.811,
+   "correct": false,
+   "date": "2025-12-02",
+   "label": "Liverpool 1-2 Newcastle United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.543,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Lille 3-1 Rennes",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.638,
+   "correct": true,
+   "date": "2025-12-02",
+   "label": "Fiorentina 2-0 Bologna",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.536,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Hoffenheim 1-3 Heidenheim",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.605,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Southampton 1-1 Everton",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.659,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Villarreal 2-0 Celta Vigo",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.458,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Saint-Etienne 0-2 Brest",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.841,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Torino 2-2 Genoa",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.444,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Tottenham Hotspur 1-0 Crystal Palace",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.566,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "West Ham United 1-0 Chelsea",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.609,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Wolverhampton Wanderers 5-3 Brighton",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.481,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Real Madrid 1-0 Leganes",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.614,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Strasbourg 2-0 Auxerre",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.42,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Toulouse 1-2 Angers",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.745,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "AC Milan 2-1 Lecce",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.445,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Werder Bremen 2-0 Bayer Leverkusen",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.399,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Atletico Madrid 0-1 Alaves",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.398,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Sevilla 2-3 Girona",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.748,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Reims 2-1 Lens",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.384,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Bologna 3-0 Como",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.431,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Napoli 0-0 Juventus",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.373,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Union Berlin 1-0 Bayern Munich",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.386,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Nottingham Forest 0-4 Fulham",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.796,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Athletic Club 0-2 Barcelona",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.453,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Montpellier 1-2 Monaco",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.42,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Nantes 2-1 Marseille",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.385,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Paris Saint-Germain 0-5 Lille",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.794,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Rennes 0-2 Le Havre",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.585,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Cagliari 0-5 Atalanta",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.475,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Holstein Kiel 0-1 Freiburg",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.941,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Mainz 05 6-1 Eintracht Frankfurt",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.472,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "RB Leipzig 5-1 Borussia Monchengladbach",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.494,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Real Betis 3-0 Mallorca",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.774,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Valladolid 4-0 Espanyol",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.514,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Nice 1-3 Lyon",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.376,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Udinese 0-2 Fiorentina",
+   "league": "SERIEA",
+   "pick": "D"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.852,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Wolfsburg 1-2 Augsburg",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.377,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Aston Villa 1-0 Brentford",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.407,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Valencia 2-0 Getafe",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.645,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Monza 0-0 Lazio",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.406,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Roma 2-1 Hellas Verona",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.379,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Venezia 1-2 Empoli",
+   "league": "SERIEA",
+   "pick": "D"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.418,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "St. Pauli 0-0 Borussia Dortmund",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.709,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Stuttgart 3-2 Bochum",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.496,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Rayo Vallecano 2-2 Osasuna",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.587,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Real Sociedad 3-2 Las Palmas",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.621,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Parma 3-0 Inter",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.569,
+   "correct": false,
+   "date": "2025-12-09",
+   "label": "Bournemouth 1-4 Arsenal",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.413,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Manchester City 2-0 Liverpool",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.431,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Manchester United 0-2 Leicester City",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.576,
+   "correct": true,
+   "date": "2025-12-09",
+   "label": "Newcastle United 3-1 Ipswich Town",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.508,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Girona 1-1 Real Madrid",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.466,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Mallorca 3-0 Osasuna",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.563,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Como 5-0 Udinese",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.581,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Bayern Munich 1-0 St. Pauli",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.48,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Bochum 1-0 RB Leipzig",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.626,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Barcelona 1-1 Valladolid",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.54,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Toulouse 5-0 Saint-Etienne",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.446,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Hellas Verona 1-3 Napoli",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.693,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Borussia Dortmund 0-1 Mainz 05",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.436,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Bournemouth 0-4 Wolverhampton Wanderers",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.398,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Brighton 0-1 Tottenham Hotspur",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.836,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Angers 0-2 Strasbourg",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.538,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Crystal Palace 2-1 Nottingham Forest",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.823,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Atletico Madrid 2-2 Villarreal",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.392,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Brest 1-2 Reims",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.908,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Le Havre 5-0 Paris Saint-Germain",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.395,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Cagliari 2-0 Venezia",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.827,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Inter 7-3 Monza",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.429,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Augsburg 2-2 Werder Bremen",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.452,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Arsenal 2-0 Aston Villa",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.637,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Fiorentina 4-1 Roma",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.44,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Chelsea 2-1 Southampton",
+   "league": "EPL",
+   "pick": "D"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.833,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Ipswich Town 0-3 Manchester City",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.641,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Leicester City 1-3 Liverpool",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.379,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Alaves 2-2 Athletic Club",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.542,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Getafe 1-2 Real Sociedad",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.794,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Lens 3-3 Nice",
+   "league": "LIGUE1",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.445,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Everton 2-1 Newcastle United",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.479,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Celta Vigo 2-2 Valencia",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.488,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Las Palmas 2-1 Real Betis",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.59,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Juventus 0-2 AC Milan",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.654,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Bayer Leverkusen 2-0 Stuttgart",
+   "league": "BUNDESLIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.561,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Brentford 4-0 West Ham United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.462,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Fulham 5-0 Manchester United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.377,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Espanyol 1-2 Sevilla",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.718,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Leganes 1-1 Rayo Vallecano",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.462,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Lazio 0-0 Lecce",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.591,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Wolfsburg 2-0 Union Berlin",
+   "league": "BUNDESLIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.695,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Auxerre 1-0 Rennes",
+   "league": "LIGUE1",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.734,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Atalanta 2-0 Bologna",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.48,
+   "correct": true,
+   "date": "2025-12-16",
+   "label": "Empoli 3-0 Torino",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.452,
+   "correct": false,
+   "date": "2025-12-16",
+   "label": "Genoa 1-3 Parma",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.631,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Liverpool 2-0 Fulham",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.492,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Manchester United 1-1 Crystal Palace",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.658,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Sevilla 0-3 Barcelona",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.685,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Villarreal 0-1 Alaves",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.621,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Newcastle United 1-0 Chelsea",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.567,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Real Betis 5-4 Getafe",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.684,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Real Madrid 2-1 Espanyol",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.693,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Leicester City 0-0 Ipswich Town",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.879,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Southampton 1-1 Brentford",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.441,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Mallorca 4-0 Leganes",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.417,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Osasuna 1-3 Las Palmas",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.735,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "AC Milan 4-0 Hellas Verona",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.456,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Nottingham Forest 1-0 Brighton",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.798,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Real Sociedad 2-1 Celta Vigo",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.57,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Valencia 2-1 Atletico Madrid",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.763,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Valladolid 3-1 Athletic Club",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.372,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Tottenham Hotspur 1-0 Bournemouth",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.371,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Roma 0-3 Como",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.88,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Manchester City 3-0 Everton",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.429,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Udinese 0-3 Bologna",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.564,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "West Ham United 0-4 Aston Villa",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.557,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Lazio 0-1 Juventus",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.516,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Napoli 0-3 Fiorentina",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.865,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Venezia 0-3 Atalanta",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.568,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Wolverhampton Wanderers 2-0 Arsenal",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.379,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Parma 6-1 Empoli",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.51,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Rayo Vallecano 1-6 Girona",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.896,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Lecce 0-3 Inter",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.581,
+   "correct": false,
+   "date": "2025-12-23",
+   "label": "Monza 4-4 Genoa",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.436,
+   "correct": true,
+   "date": "2025-12-23",
+   "label": "Torino 5-2 Cagliari",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.447,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Bournemouth 1-2 Nottingham Forest",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.448,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Espanyol 2-2 Rayo Vallecano",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.64,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Aston Villa 7-0 Southampton",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.566,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Everton 0-0 Leicester City",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.731,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Barcelona 3-0 Real Madrid",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.564,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Celta Vigo 0-4 Real Betis",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.458,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Crystal Palace 2-2 Liverpool",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.747,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Wolverhampton Wanderers 1-2 Tottenham Hotspur",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.573,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Alaves 1-1 Valladolid",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.643,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Atletico Madrid 0-2 Real Sociedad",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.5,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Villarreal 0-1 Valencia",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.369,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Fiorentina 0-0 AC Milan",
+   "league": "SERIEA",
+   "pick": "D"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.879,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Chelsea 0-3 Manchester City",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.441,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Getafe 1-2 Osasuna",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.599,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Empoli 1-1 Monza",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.412,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Brentford 3-0 Newcastle United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.882,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Atalanta 6-0 Udinese",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.524,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Hellas Verona 2-1 Lazio",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.608,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Arsenal 3-0 West Ham United",
+   "league": "EPL",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.374,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Brighton 2-2 Manchester United",
+   "league": "EPL",
+   "pick": "A"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.377,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Athletic Club 2-2 Sevilla",
+   "league": "LALIGA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.523,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Girona 3-0 Mallorca",
+   "league": "LALIGA",
+   "pick": "H"
+  },
+  {
+   "actual": "A",
+   "confidence": 0.43,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Cagliari 0-1 Parma",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.804,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Como 2-0 Napoli",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.634,
+   "correct": true,
+   "date": "2025-12-30",
+   "label": "Genoa 3-0 Lecce",
+   "league": "SERIEA",
+   "pick": "H"
+  },
+  {
+   "actual": "D",
+   "confidence": 0.514,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Venezia 2-2 Torino",
+   "league": "SERIEA",
+   "pick": "A"
+  },
+  {
+   "actual": "H",
+   "confidence": 0.381,
+   "correct": false,
+   "date": "2025-12-30",
+   "label": "Bologna 1-0 Roma",
+   "league": "SERIEA",
+   "pick": "D"
+  }
+ ],
+ "first_recorded": "2025-08-19",
+ "last_scored": "2025-12-30",
+ "n": 915,
+ "rolling": [
+  {
+   "accuracy": 0.525,
+   "index": 756
+  },
+  {
+   "accuracy": 0.525,
+   "index": 757
+  },
+  {
+   "accuracy": 0.525,
+   "index": 758
+  },
+  {
+   "accuracy": 0.5,
+   "index": 759
+  },
+  {
+   "accuracy": 0.475,
+   "index": 760
+  },
+  {
+   "accuracy": 0.475,
+   "index": 761
+  },
+  {
+   "accuracy": 0.475,
+   "index": 762
+  },
+  {
+   "accuracy": 0.475,
+   "index": 763
+  },
+  {
+   "accuracy": 0.475,
+   "index": 764
+  },
+  {
+   "accuracy": 0.5,
+   "index": 765
+  },
+  {
+   "accuracy": 0.475,
+   "index": 766
+  },
+  {
+   "accuracy": 0.475,
+   "index": 767
+  },
+  {
+   "accuracy": 0.5,
+   "index": 768
+  },
+  {
+   "accuracy": 0.525,
+   "index": 769
+  },
+  {
+   "accuracy": 0.525,
+   "index": 770
+  },
+  {
+   "accuracy": 0.55,
+   "index": 771
+  },
+  {
+   "accuracy": 0.55,
+   "index": 772
+  },
+  {
+   "accuracy": 0.525,
+   "index": 773
+  },
+  {
+   "accuracy": 0.55,
+   "index": 774
+  },
+  {
+   "accuracy": 0.55,
+   "index": 775
+  },
+  {
+   "accuracy": 0.55,
+   "index": 776
+  },
+  {
+   "accuracy": 0.525,
+   "index": 777
+  },
+  {
+   "accuracy": 0.525,
+   "index": 778
+  },
+  {
+   "accuracy": 0.525,
+   "index": 779
+  },
+  {
+   "accuracy": 0.525,
+   "index": 780
+  },
+  {
+   "accuracy": 0.55,
+   "index": 781
+  },
+  {
+   "accuracy": 0.525,
+   "index": 782
+  },
+  {
+   "accuracy": 0.55,
+   "index": 783
+  },
+  {
+   "accuracy": 0.55,
+   "index": 784
+  },
+  {
+   "accuracy": 0.55,
+   "index": 785
+  },
+  {
+   "accuracy": 0.55,
+   "index": 786
+  },
+  {
+   "accuracy": 0.55,
+   "index": 787
+  },
+  {
+   "accuracy": 0.575,
+   "index": 788
+  },
+  {
+   "accuracy": 0.6,
+   "index": 789
+  },
+  {
+   "accuracy": 0.6,
+   "index": 790
+  },
+  {
+   "accuracy": 0.6,
+   "index": 791
+  },
+  {
+   "accuracy": 0.625,
+   "index": 792
+  },
+  {
+   "accuracy": 0.65,
+   "index": 793
+  },
+  {
+   "accuracy": 0.675,
+   "index": 794
+  },
+  {
+   "accuracy": 0.7,
+   "index": 795
+  },
+  {
+   "accuracy": 0.725,
+   "index": 796
+  },
+  {
+   "accuracy": 0.725,
+   "index": 797
+  },
+  {
+   "accuracy": 0.75,
+   "index": 798
+  },
+  {
+   "accuracy": 0.775,
+   "index": 799
+  },
+  {
+   "accuracy": 0.775,
+   "index": 800
+  },
+  {
+   "accuracy": 0.75,
+   "index": 801
+  },
+  {
+   "accuracy": 0.725,
+   "index": 802
+  },
+  {
+   "accuracy": 0.725,
+   "index": 803
+  },
+  {
+   "accuracy": 0.75,
+   "index": 804
+  },
+  {
+   "accuracy": 0.725,
+   "index": 805
+  },
+  {
+   "accuracy": 0.75,
+   "index": 806
+  },
+  {
+   "accuracy": 0.725,
+   "index": 807
+  },
+  {
+   "accuracy": 0.7,
+   "index": 808
+  },
+  {
+   "accuracy": 0.7,
+   "index": 809
+  },
+  {
+   "accuracy": 0.7,
+   "index": 810
+  },
+  {
+   "accuracy": 0.7,
+   "index": 811
+  },
+  {
+   "accuracy": 0.675,
+   "index": 812
+  },
+  {
+   "accuracy": 0.675,
+   "index": 813
+  },
+  {
+   "accuracy": 0.675,
+   "index": 814
+  },
+  {
+   "accuracy": 0.675,
+   "index": 815
+  },
+  {
+   "accuracy": 0.675,
+   "index": 816
+  },
+  {
+   "accuracy": 0.675,
+   "index": 817
+  },
+  {
+   "accuracy": 0.675,
+   "index": 818
+  },
+  {
+   "accuracy": 0.675,
+   "index": 819
+  },
+  {
+   "accuracy": 0.675,
+   "index": 820
+  },
+  {
+   "accuracy": 0.675,
+   "index": 821
+  },
+  {
+   "accuracy": 0.675,
+   "index": 822
+  },
+  {
+   "accuracy": 0.675,
+   "index": 823
+  },
+  {
+   "accuracy": 0.65,
+   "index": 824
+  },
+  {
+   "accuracy": 0.65,
+   "index": 825
+  },
+  {
+   "accuracy": 0.65,
+   "index": 826
+  },
+  {
+   "accuracy": 0.675,
+   "index": 827
+  },
+  {
+   "accuracy": 0.675,
+   "index": 828
+  },
+  {
+   "accuracy": 0.675,
+   "index": 829
+  },
+  {
+   "accuracy": 0.65,
+   "index": 830
+  },
+  {
+   "accuracy": 0.65,
+   "index": 831
+  },
+  {
+   "accuracy": 0.65,
+   "index": 832
+  },
+  {
+   "accuracy": 0.65,
+   "index": 833
+  },
+  {
+   "accuracy": 0.65,
+   "index": 834
+  },
+  {
+   "accuracy": 0.625,
+   "index": 835
+  },
+  {
+   "accuracy": 0.625,
+   "index": 836
+  },
+  {
+   "accuracy": 0.625,
+   "index": 837
+  },
+  {
+   "accuracy": 0.6,
+   "index": 838
+  },
+  {
+   "accuracy": 0.6,
+   "index": 839
+  },
+  {
+   "accuracy": 0.625,
+   "index": 840
+  },
+  {
+   "accuracy": 0.625,
+   "index": 841
+  },
+  {
+   "accuracy": 0.65,
+   "index": 842
+  },
+  {
+   "accuracy": 0.625,
+   "index": 843
+  },
+  {
+   "accuracy": 0.6,
+   "index": 844
+  },
+  {
+   "accuracy": 0.6,
+   "index": 845
+  },
+  {
+   "accuracy": 0.575,
+   "index": 846
+  },
+  {
+   "accuracy": 0.6,
+   "index": 847
+  },
+  {
+   "accuracy": 0.6,
+   "index": 848
+  },
+  {
+   "accuracy": 0.6,
+   "index": 849
+  },
+  {
+   "accuracy": 0.625,
+   "index": 850
+  },
+  {
+   "accuracy": 0.6,
+   "index": 851
+  },
+  {
+   "accuracy": 0.6,
+   "index": 852
+  },
+  {
+   "accuracy": 0.6,
+   "index": 853
+  },
+  {
+   "accuracy": 0.6,
+   "index": 854
+  },
+  {
+   "accuracy": 0.6,
+   "index": 855
+  },
+  {
+   "accuracy": 0.6,
+   "index": 856
+  },
+  {
+   "accuracy": 0.625,
+   "index": 857
+  },
+  {
+   "accuracy": 0.6,
+   "index": 858
+  },
+  {
+   "accuracy": 0.6,
+   "index": 859
+  },
+  {
+   "accuracy": 0.575,
+   "index": 860
+  },
+  {
+   "accuracy": 0.575,
+   "index": 861
+  },
+  {
+   "accuracy": 0.575,
+   "index": 862
+  },
+  {
+   "accuracy": 0.575,
+   "index": 863
+  },
+  {
+   "accuracy": 0.6,
+   "index": 864
+  },
+  {
+   "accuracy": 0.6,
+   "index": 865
+  },
+  {
+   "accuracy": 0.6,
+   "index": 866
+  },
+  {
+   "accuracy": 0.575,
+   "index": 867
+  },
+  {
+   "accuracy": 0.575,
+   "index": 868
+  },
+  {
+   "accuracy": 0.55,
+   "index": 869
+  },
+  {
+   "accuracy": 0.575,
+   "index": 870
+  },
+  {
+   "accuracy": 0.55,
+   "index": 871
+  },
+  {
+   "accuracy": 0.55,
+   "index": 872
+  },
+  {
+   "accuracy": 0.55,
+   "index": 873
+  },
+  {
+   "accuracy": 0.55,
+   "index": 874
+  },
+  {
+   "accuracy": 0.55,
+   "index": 875
+  },
+  {
+   "accuracy": 0.55,
+   "index": 876
+  },
+  {
+   "accuracy": 0.55,
+   "index": 877
+  },
+  {
+   "accuracy": 0.575,
+   "index": 878
+  },
+  {
+   "accuracy": 0.575,
+   "index": 879
+  },
+  {
+   "accuracy": 0.575,
+   "index": 880
+  },
+  {
+   "accuracy": 0.6,
+   "index": 881
+  },
+  {
+   "accuracy": 0.6,
+   "index": 882
+  },
+  {
+   "accuracy": 0.625,
+   "index": 883
+  },
+  {
+   "accuracy": 0.65,
+   "index": 884
+  },
+  {
+   "accuracy": 0.675,
+   "index": 885
+  },
+  {
+   "accuracy": 0.7,
+   "index": 886
+  },
+  {
+   "accuracy": 0.675,
+   "index": 887
+  },
+  {
+   "accuracy": 0.7,
+   "index": 888
+  },
+  {
+   "accuracy": 0.7,
+   "index": 889
+  },
+  {
+   "accuracy": 0.675,
+   "index": 890
+  },
+  {
+   "accuracy": 0.7,
+   "index": 891
+  },
+  {
+   "accuracy": 0.7,
+   "index": 892
+  },
+  {
+   "accuracy": 0.725,
+   "index": 893
+  },
+  {
+   "accuracy": 0.725,
+   "index": 894
+  },
+  {
+   "accuracy": 0.7,
+   "index": 895
+  },
+  {
+   "accuracy": 0.675,
+   "index": 896
+  },
+  {
+   "accuracy": 0.65,
+   "index": 897
+  },
+  {
+   "accuracy": 0.675,
+   "index": 898
+  },
+  {
+   "accuracy": 0.65,
+   "index": 899
+  },
+  {
+   "accuracy": 0.675,
+   "index": 900
+  },
+  {
+   "accuracy": 0.675,
+   "index": 901
+  },
+  {
+   "accuracy": 0.7,
+   "index": 902
+  },
+  {
+   "accuracy": 0.675,
+   "index": 903
+  },
+  {
+   "accuracy": 0.675,
+   "index": 904
+  },
+  {
+   "accuracy": 0.675,
+   "index": 905
+  },
+  {
+   "accuracy": 0.7,
+   "index": 906
+  },
+  {
+   "accuracy": 0.725,
+   "index": 907
+  },
+  {
+   "accuracy": 0.7,
+   "index": 908
+  },
+  {
+   "accuracy": 0.7,
+   "index": 909
+  },
+  {
+   "accuracy": 0.7,
+   "index": 910
+  },
+  {
+   "accuracy": 0.725,
+   "index": 911
+  },
+  {
+   "accuracy": 0.725,
+   "index": 912
+  },
+  {
+   "accuracy": 0.725,
+   "index": 913
+  },
+  {
+   "accuracy": 0.7,
+   "index": 914
+  },
+  {
+   "accuracy": 0.7,
+   "index": 915
+  }
+ ]
+}

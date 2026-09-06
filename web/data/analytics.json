@@ -1,0 +1,323 @@
+{
+ "leagues": [
+  {
+   "away_win_rate": 0.3158,
+   "draw_rate": 0.2118,
+   "goals_per_match": 2.8333,
+   "home_advantage_points": 0.4696,
+   "home_win_rate": 0.4724,
+   "league": "BUNDESLIGA",
+   "matches": 1086,
+   "value_premium": 1.4785
+  },
+  {
+   "away_win_rate": 0.341,
+   "draw_rate": 0.2076,
+   "goals_per_match": 2.9073,
+   "home_advantage_points": 0.3314,
+   "home_win_rate": 0.4514,
+   "league": "EPL",
+   "matches": 1349,
+   "value_premium": 2.1257
+  },
+  {
+   "away_win_rate": 0.3328,
+   "draw_rate": 0.2246,
+   "goals_per_match": 3.0141,
+   "home_advantage_points": 0.3291,
+   "home_win_rate": 0.4426,
+   "league": "LALIGA",
+   "matches": 1349,
+   "value_premium": 1.5633
+  },
+  {
+   "away_win_rate": 0.3333,
+   "draw_rate": 0.2063,
+   "goals_per_match": 2.93,
+   "home_advantage_points": 0.3812,
+   "home_win_rate": 0.4604,
+   "league": "LIGUE1",
+   "matches": 1086,
+   "value_premium": 1.0
+  },
+  {
+   "away_win_rate": 0.3291,
+   "draw_rate": 0.2157,
+   "goals_per_match": 2.9029,
+   "home_advantage_points": 0.3781,
+   "home_win_rate": 0.4552,
+   "league": "SERIEA",
+   "matches": 1349,
+   "value_premium": 1.168
+  }
+ ],
+ "overvalued": [
+  {
+   "age": 19,
+   "league": "BUNDESLIGA",
+   "market_value_eur": 1824961.4313,
+   "name": "Halim Iversen",
+   "player_id": 1421,
+   "position": "M",
+   "predicted_value_eur": 5489255.2092,
+   "team": "Borussia Monchengladbach",
+   "value_ratio": 102.8227
+  },
+  {
+   "age": 26,
+   "league": "BUNDESLIGA",
+   "market_value_eur": 564420097.1726,
+   "name": "Lars Aleman",
+   "player_id": 1400,
+   "position": "D",
+   "predicted_value_eur": 5489255.2092,
+   "team": "Borussia Dortmund",
+   "value_ratio": 102.8227
+  },
+  {
+   "age": 26,
+   "league": "BUNDESLIGA",
+   "market_value_eur": 8389637.1698,
+   "name": "Cesar Xhemaili",
+   "player_id": 1337,
+   "position": "D",
+   "predicted_value_eur": 6090911.8829,
+   "team": "Bayer Leverkusen",
+   "value_ratio": 92.6659
+  },
+  {
+   "age": 28,
+   "league": "BUNDESLIGA",
+   "market_value_eur": 564420097.1726,
+   "name": "Lars Aleman",
+   "player_id": 1360,
+   "position": "D",
+   "predicted_value_eur": 6090911.8829,
+   "team": "Bayern Munich",
+   "value_ratio": 92.6659
+  },
+  {
+   "age": 27,
+   "league": "BUNDESLIGA",
+   "market_value_eur": 371722633.0723,
+   "name": "Andrei Thoresen",
+   "player_id": 1541,
+   "position": "D",
+   "predicted_value_eur": 9822178.8571,
+   "team": "Mainz 05",
+   "value_ratio": 37.8452
+  },
+  {
+   "age": 24,
+   "league": "SERIEA",
+   "market_value_eur": 171011883.4311,
+   "name": "Wim Halvorsen",
+   "player_id": 884,
+   "position": "D",
+   "predicted_value_eur": 5366936.8085,
+   "team": "Atalanta",
+   "value_ratio": 31.864
+  },
+  {
+   "age": 24,
+   "league": "LALIGA",
+   "market_value_eur": 141138706.0376,
+   "name": "Goran Novak",
+   "player_id": 511,
+   "position": "GK",
+   "predicted_value_eur": 5157157.5592,
+   "team": "Barcelona",
+   "value_ratio": 27.3675
+  },
+  {
+   "age": 19,
+   "league": "SERIEA",
+   "market_value_eur": 138926432.3859,
+   "name": "Osman Xhemaili",
+   "player_id": 890,
+   "position": "D",
+   "predicted_value_eur": 5131580.3597,
+   "team": "Atalanta",
+   "value_ratio": 27.0728
+  },
+  {
+   "age": 30,
+   "league": "SERIEA",
+   "market_value_eur": 80154356.8839,
+   "name": "Kai Abadi",
+   "player_id": 1067,
+   "position": "GK",
+   "predicted_value_eur": 3091787.2562,
+   "team": "Juventus",
+   "value_ratio": 25.9249
+  },
+  {
+   "age": 34,
+   "league": "LALIGA",
+   "market_value_eur": 68747181.6298,
+   "name": "Rafa Kovac",
+   "player_id": 485,
+   "position": "F",
+   "predicted_value_eur": 3150362.072,
+   "team": "Atletico Madrid",
+   "value_ratio": 21.822
+  },
+  {
+   "age": 27,
+   "league": "BUNDESLIGA",
+   "market_value_eur": 215188487.2404,
+   "name": "Cesar Oyelaran",
+   "player_id": 1313,
+   "position": "M",
+   "predicted_value_eur": 9946228.0591,
+   "team": "Augsburg",
+   "value_ratio": 21.6352
+  },
+  {
+   "age": 20,
+   "league": "EPL",
+   "market_value_eur": 244655272.5063,
+   "name": "Davor Engels",
+   "player_id": 268,
+   "position": "D",
+   "predicted_value_eur": 11451974.5218,
+   "team": "Manchester City",
+   "value_ratio": 21.3636
+  }
+ ],
+ "premium_reference": "LIGUE1",
+ "undervalued": [
+  {
+   "age": 30,
+   "league": "SERIEA",
+   "market_value_eur": 192134.9575,
+   "name": "Ferran Sandoval",
+   "player_id": 1071,
+   "position": "M",
+   "predicted_value_eur": 6625507.0218,
+   "team": "Juventus",
+   "value_ratio": 0.029
+  },
+  {
+   "age": 22,
+   "league": "LIGUE1",
+   "market_value_eur": 2097151.5236,
+   "name": "Andrei Lindqvist",
+   "player_id": 1834,
+   "position": "F",
+   "predicted_value_eur": 52393586.9357,
+   "team": "Lyon",
+   "value_ratio": 0.04
+  },
+  {
+   "age": 29,
+   "league": "LIGUE1",
+   "market_value_eur": 682608.2754,
+   "name": "Osman Halvorsen",
+   "player_id": 1713,
+   "position": "M",
+   "predicted_value_eur": 14512172.6408,
+   "team": "Auxerre",
+   "value_ratio": 0.047
+  },
+  {
+   "age": 20,
+   "league": "LALIGA",
+   "market_value_eur": 594552.7892,
+   "name": "Tomas Halvorsen",
+   "player_id": 537,
+   "position": "F",
+   "predicted_value_eur": 12297205.1556,
+   "team": "Celta Vigo",
+   "value_ratio": 0.0483
+  },
+  {
+   "age": 27,
+   "league": "EPL",
+   "market_value_eur": 16497314.7087,
+   "name": "Aleks Urbina",
+   "player_id": 256,
+   "position": "M",
+   "predicted_value_eur": 335752357.9735,
+   "team": "Liverpool",
+   "value_ratio": 0.0491
+  },
+  {
+   "age": 25,
+   "league": "LALIGA",
+   "market_value_eur": 408180.7929,
+   "name": "Milo Weiss",
+   "player_id": 693,
+   "position": "M",
+   "predicted_value_eur": 8078710.1827,
+   "team": "Rayo Vallecano",
+   "value_ratio": 0.0505
+  },
+  {
+   "age": 19,
+   "league": "LALIGA",
+   "market_value_eur": 280968.4424,
+   "name": "Dries Sandoval",
+   "player_id": 556,
+   "position": "GK",
+   "predicted_value_eur": 5121609.0619,
+   "team": "Espanyol",
+   "value_ratio": 0.0549
+  },
+  {
+   "age": 28,
+   "league": "LALIGA",
+   "market_value_eur": 448035.3275,
+   "name": "Joris Castellan",
+   "player_id": 580,
+   "position": "D",
+   "predicted_value_eur": 7010864.1596,
+   "team": "Getafe",
+   "value_ratio": 0.0639
+  },
+  {
+   "age": 28,
+   "league": "LALIGA",
+   "market_value_eur": 448035.3275,
+   "name": "Joris Castellan",
+   "player_id": 621,
+   "position": "D",
+   "predicted_value_eur": 6833787.8196,
+   "team": "Las Palmas",
+   "value_ratio": 0.0656
+  },
+  {
+   "age": 24,
+   "league": "EPL",
+   "market_value_eur": 2534980.2966,
+   "name": "Bo Aleman",
+   "player_id": 255,
+   "position": "M",
+   "predicted_value_eur": 36861250.8311,
+   "team": "Liverpool",
+   "value_ratio": 0.0688
+  },
+  {
+   "age": 33,
+   "league": "BUNDESLIGA",
+   "market_value_eur": 429970.2095,
+   "name": "Fabio Sandoval",
+   "player_id": 1500,
+   "position": "M",
+   "predicted_value_eur": 6122403.5503,
+   "team": "Hoffenheim",
+   "value_ratio": 0.0702
+  },
+  {
+   "age": 23,
+   "league": "LALIGA",
+   "market_value_eur": 448035.3275,
+   "name": "Joris Castellan",
+   "player_id": 696,
+   "position": "D",
+   "predicted_value_eur": 6046996.2627,
+   "team": "Rayo Vallecano",
+   "value_ratio": 0.0741
+  }
+ ]
+}

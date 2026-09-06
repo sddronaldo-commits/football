@@ -1,0 +1,77 @@
+name: Predict
+
+# Friday morning: refresh data, retrain, predict the weekend, commit before
+# kickoff. The commit timestamp is what makes the ledger credible, so this must
+# run ahead of the earliest fixture, not after it.
+on:
+  schedule:
+    - cron: "0 6 * * 5"
+  workflow_dispatch:
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # A push made with the default GITHUB_TOKEN does not count as repository
+          # activity, and GitHub disables scheduled workflows after ~60 days of
+          # inactivity. Pushing with a PAT keeps the cron alive.
+          token: ${{ secrets.PIPELINE_TOKEN || github.token }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r pipeline/requirements.txt
+
+      - name: Cache raw API responses
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: raw-${{ github.run_id }}
+          restore-keys: raw-
+
+      - name: Run pipeline
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: python -m pipeline.run
+
+      - name: Verify output before publishing
+        run: python -m pytest tests -q
+
+      - name: Save the source join report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: join-report
+          path: data/join_report.json
+          if-no-files-found: warn
+
+      - name: Commit predictions
+        run: |
+          git config user.name "bigfive-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data web/data
+          if git diff --staged --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "predict: $(date -u +%Y-%m-%d) fixtures"
+            git push
+          fi
+
+  publish:
+    needs: predict
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

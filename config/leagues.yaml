@@ -1,0 +1,62 @@
+# Every league the pipeline knows about. Adding a sixth league is a config
+# change, not a code change. `enabled: false` keeps a league in the schema but
+# out of the weekly run — that is how you ship one league and grow later.
+
+leagues:
+  - id: EPL
+    name: Premier League
+    country: England
+    enabled: true
+    football_data_code: PL      # football-data.org competition code
+    understat_slug: EPL         # Understat league slug
+    teams: 20
+    matchdays: 38
+    currency_note: Values in EUR, converted by the source dataset.
+
+  - id: LALIGA
+    name: La Liga
+    country: Spain
+    enabled: true
+    football_data_code: PD
+    understat_slug: La_liga
+    teams: 20
+    matchdays: 38
+
+  - id: SERIEA
+    name: Serie A
+    country: Italy
+    enabled: true
+    football_data_code: SA
+    understat_slug: Serie_A
+    teams: 20
+    matchdays: 38
+
+  - id: BUNDESLIGA
+    name: Bundesliga
+    country: Germany
+    enabled: true
+    football_data_code: BL1
+    understat_slug: Bundesliga
+    teams: 18
+    matchdays: 34
+    notes: Winter break splits the season; do not assume continuous matchdays.
+
+  - id: LIGUE1
+    name: Ligue 1
+    country: France
+    enabled: true
+    football_data_code: FL1
+    understat_slug: Ligue_1
+    teams: 18
+    matchdays: 34
+    notes: 18 teams since 2023-24. Never assume 20.
+
+seasons:
+  history: [2022, 2023, 2024]   # used for training
+  current: 2025                 # used for prediction
+
+pipeline:
+  form_window: 5                # matches used for rolling form features
+  neighbours: 12                # precomputed similar players per player
+  style_clusters: 8             # k-means playing-style groups
+  min_minutes: 600              # player inclusion threshold for a season

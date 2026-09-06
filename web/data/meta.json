@@ -1,0 +1,45 @@
+{
+ "current_season": 2025,
+ "generated_at": "2026-09-06T13:49:23+00:00",
+ "history_seasons": [
+  2022,
+  2023,
+  2024
+ ],
+ "join_rate": 1.0,
+ "leagues": [
+  {
+   "country": "England",
+   "id": "EPL",
+   "name": "Premier League",
+   "teams": 20
+  },
+  {
+   "country": "Spain",
+   "id": "LALIGA",
+   "name": "La Liga",
+   "teams": 20
+  },
+  {
+   "country": "Italy",
+   "id": "SERIEA",
+   "name": "Serie A",
+   "teams": 20
+  },
+  {
+   "country": "Germany",
+   "id": "BUNDESLIGA",
+   "name": "Bundesliga",
+   "teams": 18
+  },
+  {
+   "country": "France",
+   "id": "LIGUE1",
+   "name": "Ligue 1",
+   "teams": 18
+  }
+ ],
+ "mode": "demo",
+ "model_version": "v2de6c4b",
+ "schema": 3
+}
