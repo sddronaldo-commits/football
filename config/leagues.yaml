@@ -52,8 +52,8 @@ leagues:
     notes: 18 teams since 2023-24. Never assume 20.
 
 seasons:
-  history: [2022, 2023, 2024]   # used for training
-  current: 2025                 # used for prediction
+  history: [2023, 2024, 2025]
+  current: 2026
 
 pipeline:
   form_window: 5                # matches used for rolling form features
